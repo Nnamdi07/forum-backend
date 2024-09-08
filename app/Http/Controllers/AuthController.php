@@ -18,8 +18,12 @@ class AuthController extends Controller
                 'password' => 'required|string|min:8',
             ]);
     
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
+            if($validator->fails()){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'validation error',
+                    'errors' => $validator->errors()
+                ], 401);
             }
     
             $user = User::create([
