@@ -32,7 +32,7 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password),
             ]);
     
-            return response()->json(['message' => 'User registered successfully!', 'user' => $user], 201);
+            return response()->json(['message' => 'User Registered Successfully!', 'user' => $user], 201);
         }  catch (\Throwable $th) {
             return response()->json([
                 'status' => false,
