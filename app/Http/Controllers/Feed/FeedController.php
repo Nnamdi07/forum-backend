@@ -124,7 +124,7 @@ class FeedController extends Controller
 
         return response()->json([
             'status' => true,
-           'message' => 'Feeds found successfully',
+           'message' => "User's Feed found successfully",
             'feeds' => $feeds,
         ], 200);
     }
