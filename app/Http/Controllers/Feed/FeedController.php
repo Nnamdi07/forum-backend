@@ -35,7 +35,7 @@ class FeedController extends Controller
             'status' => true,
             'message' => 'feed created successfully',
             'feed' => $new_feed,
-        ], 200);
+        ], 201);
     }
 
     public function likePost($id){
@@ -110,7 +110,7 @@ class FeedController extends Controller
     }
 
     public function showAllFeeds(){
-        $feeds = Feed::with('user', 'likes', 'comments')->get();
+        $feeds = Feed::with('user', 'likes', 'comments')->orderBy('created_at','desc')->get();
 
         return response()->json([
             'status' => true,
