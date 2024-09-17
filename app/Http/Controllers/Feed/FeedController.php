@@ -149,12 +149,12 @@ class FeedController extends Controller
     }
 
     public function getComments($id){
-        $comments = Comment::with('user')->where('feed_id', $id)->get();
+        $comments = Comment::with('user', 'feed')->where('feed_id', $id)->get();
 
         return response()->json([
             'status' => true,
            'message' => 'Comment retrieved successfully',
-            'comment' => $comments,
+            'comments' => $comments,
         ], 200);
     }
 }
