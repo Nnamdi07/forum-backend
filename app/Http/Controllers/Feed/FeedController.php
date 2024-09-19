@@ -50,7 +50,7 @@ class FeedController extends Controller
 
             return response()->json([
                 'status' => true,
-               'message' => 'liked  post successfully',
+               'message' => 'liked post successfully',
             ], 200);
         }
         else if($feed and $like){
@@ -58,7 +58,7 @@ class FeedController extends Controller
 
             return response()->json([
                 'status' => true,
-               'message' => 'unliked  post successfully',
+               'message' => 'unliked post successfully',
             ], 200);
         }
         else{
