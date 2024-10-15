@@ -53,7 +53,7 @@ class FeedController extends Controller
                'message' => 'liked post successfully',
             ], 200);
             
-        }//\new update here
+        }//new update here
         else if($feed and $like){
             $like->delete();
 
